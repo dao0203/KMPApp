@@ -32,6 +32,9 @@ kotlin {
 
                 //add dependency for kotlinx-datetime
                 implementation(libs.kotlinx.date.time)
+
+                //add dependency for kotlinx-coroutines
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
         val commonTest by getting {
