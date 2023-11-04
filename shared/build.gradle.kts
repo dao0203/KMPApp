@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version "1.9.20"
+    id("co.touchlab.skie") version "0.4.19"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -32,11 +34,32 @@ kotlin {
 
                 //add dependency for kotlinx-datetime
                 implementation(libs.kotlinx.date.time)
+
+                //add dependency for kotlinx-coroutines
+                implementation(libs.kotlinx.coroutines.core)
+
+                //add dependency for ktor
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(libs.kotlin.test)
+            }
+        }
+
+        val androidMain by getting {
+            dependencies {
+                //put your android dependencies here
+                implementation(libs.ktor.client.android)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
