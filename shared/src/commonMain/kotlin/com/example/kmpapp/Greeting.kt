@@ -27,6 +27,9 @@ class Greeting {
         delay(1.seconds)
         emit(daysPhrase)
         delay(1.seconds)
-        emit(rocketComponent.launchPhrase())
+        while (true){
+            emit(rocketComponent.launchPhrase())
+            delay(1.seconds)
+        }
     }
 }
