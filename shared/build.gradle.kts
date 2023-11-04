@@ -36,11 +36,29 @@ kotlin {
 
                 //add dependency for kotlinx-coroutines
                 implementation(libs.kotlinx.coroutines.core)
+
+                //add dependency for ktor
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.serialization.kotlinx.json)
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(libs.kotlin.test)
+            }
+        }
+
+        val androidMain by getting {
+            dependencies {
+                //put your android dependencies here
+                implementation(libs.ktor.client.android)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
             }
         }
     }
