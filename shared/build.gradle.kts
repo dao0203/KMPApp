@@ -29,6 +29,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 //put your multiplatform dependencies here
+
+                //add dependency for kotlinx-datetime
+                implementation(libs.kotlinx.date.time)
             }
         }
         val commonTest by getting {
