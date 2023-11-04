@@ -1,6 +1,7 @@
 # kotlin-multiplatform-sample
 ## Introduction
 （苦し紛れの英語で書いております）
+
 This is a kotlin multiplatform sample based on the Get started with Kotlin Multiplatform (see URL below).
 https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html
 
